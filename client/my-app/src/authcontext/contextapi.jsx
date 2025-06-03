@@ -155,11 +155,12 @@ export const AuthProvider = ({ children }) => {
   }, [logininfo]);
 
   // Function to log out a user
-  const logout = () => {
+   const logout = useCallback(() => {
+    console.log("user-succefully-logged out");
     setLocalUser(null);
     localStorage.removeItem("User");
     localStorage.removeItem("login");
-  };
+  }, []);
 
   return (
     <AuthContext.Provider
