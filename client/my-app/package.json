@@ -13,9 +13,11 @@
   "dependencies": {
     "@react-spring/web": "^10.0.1",
     "framer-motion": "^12.15.0",
+    "mongoose": "^8.15.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-input-emoji": "^5.9.0",
+    "react-router-dom": "^7.6.1",
     "socket.io-client": "^4.8.1"
   },
   "devDependencies": {
