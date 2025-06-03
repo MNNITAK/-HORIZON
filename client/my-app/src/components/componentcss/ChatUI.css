@@ -107,7 +107,7 @@ body {
 .messages-title {
   font-size: 1.125rem;
   font-weight: bold;
-  color: #00FFE7;
+  color: white;
 }
 
 .messages-count {
@@ -234,12 +234,14 @@ body {
 }
 
 .chat-input button {
-  background-color: #00FFE7;
-  color: #0B0F2B;
+background: linear-gradient(135deg, #2e3a4d, #6b7280);
+color: #f8fafc;
+/* padding:10px; */
   padding: 0.5rem 1rem;
   border-radius: 9999px;
   font-weight: bold;
 }
+
 
 .Addusers {
   padding: 2px 8px;
@@ -370,16 +372,16 @@ color: #000000;
 }
 
 .sent {
-  background-color: #00FFE7;
-  color: #0B0F2B;
+  background: linear-gradient(145deg, #1e3a8a, #334155);
+  color: #e2e8f0;
   align-self: flex-end;
   margin-left: auto;
   border-bottom-right-radius: 0;
 }
 
 .received {
-  background-color: #27394e;
-  color: #ffffff;
+ background: linear-gradient(145deg, #1f2937, #2e3a4d);
+  color: #dbeafe;
   align-self: flex-start;
   margin-right: auto;
   border-bottom-left-radius: 0;
@@ -412,3 +414,43 @@ color: #000000;
     transform: translateY(0);
   }
 }
+
+
+
+/* ===== Custom Scrollbar Styling for Webkit Browsers ===== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #575dd7 0%, #91cfff 40%, #ffaacc 100%);
+  border-radius: 10px;
+  border: 2px solid #0B0F2B;
+  box-shadow: 0 0 6px #91cfff;
+  transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ffaacc 0%, #91cfff 60%, #575dd7 100%);
+}
+
+
+
+
+
+
+/* Firefox support */
+* {
+  scrollbar-color: #91cfff #0B0F2B;
+  scrollbar-width: thin;
+}
+
+
+
+
+

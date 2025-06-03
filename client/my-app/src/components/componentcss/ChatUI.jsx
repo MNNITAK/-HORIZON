@@ -29,7 +29,6 @@ const Profile = ({ u }) => {
       <div className="spacechat-avatar" />
       <div className="spacechat-user-info">
         <h4 className="spacechat-user-name">{u?.user?.name}</h4>
-      
       </div>
       <button className="spacechat-view-btn">🪐 Profile</button>
     </div>
@@ -49,7 +48,7 @@ const ChatUI = () => {
     message,
     receiver,
     receiverId,
-    onlineUser
+    onlineUser,
   } = ownChats();
 
   return (
@@ -58,9 +57,7 @@ const ChatUI = () => {
       {/* Sidebar */}
       <div className="sidebar">
         <div className="sidebar-header">
-          <h2 className="messages-title">
-            Mission Logs 
-          </h2>
+          <h2 className="messages-title">Mission Logs</h2>
           <Link to="/AddUser">
             <button className="Addusers">Add Astronauts</button>
           </Link>
@@ -90,11 +87,11 @@ const ChatUI = () => {
             <div className="chat-user">
               <div className="user-info">
                 <h4 className="user-name">
-                  <span className="online-status">{
-                    onlineUser?.some((user) => user.userId === receiverId)
+                  <span className="online-status">
+                    {onlineUser?.some((user) => user.userId === receiverId)
                       ? "🟢"
-                      : "🔴"
-                  }</span>
+                      : "🔴"}
+                  </span>
                 </h4>
                 <p className="username">{receiver?.user?.name}</p>
               </div>
@@ -106,31 +103,45 @@ const ChatUI = () => {
           <div className="chat-body">
             <div className="chat-body-main">
               {message.map((msg, idx) => (
-                   <div
-                    key={idx}
-                    className={`message-bubble ${
-                      msg.senderId === localuser?.id ? "sent" : "received"
-                    }`}
-                  >
-                    <p className="message-text">{msg.text}</p>
-                    <span className="message-time">
-                      {new Date(msg.createdAt).toLocaleTimeString([], {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                      })}
-                    </span>
-                  </div>
-                ))}
+                <div
+                  key={idx}
+                  className={`message-bubble ${
+                    msg.senderId === localuser?.id ? "sent" : "received"
+                  }`}
+                >
+                  <p className="message-text">{msg.text}</p>
+                  <span className="message-time">
+                    {new Date(msg.createdAt).toLocaleTimeString([], {
+                      hour: "2-digit",
+                      minute: "2-digit",
+                    })}
+                  </span>
+                </div>
+              ))}
             </div>
             <div className="chat-body-type">
               <div className="chat-input">
+                
                 <InputEmoji
+                  
                   value={text}
                   onChange={setText}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") {
+                      e.preventDefault();
+                      sendTextMessage(
+                        text,
+                        localuser?.id,
+                        currentChat?._id,
+                        setText
+                      );
+                    }
+                  }}
                   fontFamily="Orbitron, Arial, sans-serif"
                   border="light-200"
                   placeholder="Transmit a message..."
                 />
+
                 <button
                   onClick={(e) => {
                     e.preventDefault();
