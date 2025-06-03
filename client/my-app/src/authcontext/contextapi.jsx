@@ -108,6 +108,7 @@ export const AuthProvider = ({ children }) => {
       localStorage.setItem("User", JSON.stringify(response));  //saved as user the current user
       //       setUser(response);
       setregisterloading(false);
+      navigate('/login');
     } catch (error) {
       setregisterloading(false);
       setregistererror({ error: true, message: error.message });
