@@ -52,6 +52,7 @@ export const ChatContextProvider = ({ children }) => {
 
   // it contains one by one changing socket connections, as new user adds
   const [onlineUser, setOnlineUser] = useState(null);
+  const baseurl="https://horizon-kxu9.onrender.com"
 
   // have the latest online users....
   //now useffect to send the messag in realtime....
@@ -84,7 +85,7 @@ useEffect(() => {
   useEffect(() => {
     if (!localuser) return; // Only connect if user is logged in
 
-    const newsocket = io("http://localhost:5000");
+    const newsocket = io("https://horizon-kxu9.onrender.com");
     setSocket(newsocket);
 
     return () => {
