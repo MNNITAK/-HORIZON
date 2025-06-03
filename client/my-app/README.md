@@ -20,9 +20,6 @@ cd c:\Users\ay912\Desktop\realtimechat\frontened\my-app
 
 cd c:\frontened\my-app
 
-git add .
-git commit -m""
-git push
 
 
 
