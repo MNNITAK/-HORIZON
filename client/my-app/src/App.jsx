@@ -4,7 +4,7 @@ import Login from "./components/componentcss/Login2.jsx";
 import SignupForm from "./components/componentcss/Signup.jsx";
 import Help from "./components/componentcss/Help.jsx";
 import ChatUI from "./components/componentcss/ChatUI.jsx"; // Fixed import path
-import AddUsers from "./components/componentcss/Addusers.jsx";
+import AddUsers from "./components/componentcss/AddUsers.jsx";
 import React from "react";
 import { useAuth } from "./authcontext/contextapi.jsx";
 import { ChatContextProvider } from "./authcontext/chatcontextapi.jsx"; // Fixed spacing in 
