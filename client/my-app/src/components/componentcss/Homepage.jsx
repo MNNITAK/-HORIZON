@@ -62,7 +62,7 @@ const Homepage = () => {
             )}
             {localuser && (
               <>
-                <span>👨‍🚀</span><span class="comet-username"> AKSHAY YADAV</span>
+                <span>👨‍🚀</span><span class="comet-username"> {name}</span>
               </>
             )}
           </div>
