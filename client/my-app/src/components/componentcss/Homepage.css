@@ -149,10 +149,19 @@ top: 200px;
  font-weight: 400;
   font-style: normal;
 font-size: 100px;
-background: linear-gradient(90deg, #82f369 0%, #91cfff 40%, #ffaacc 100%);
-color: transparent;
--webkit-background-clip: text;
-background-clip: text;
--webkit-text-fill-color: transparent;
-/* text-fill-color: transparent; */
+ background: linear-gradient(90deg, #ff2c7d 0%, #c236ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
+
+.comet-username {
+   font-family: 'Segoe UI', sans-serif;
+  background: white;
+  -webkit-background-clip: text;
+  color: transparent;
+  
+  position: relative;
+  
+}
+
+

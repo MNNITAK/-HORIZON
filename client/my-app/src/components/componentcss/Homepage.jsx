@@ -34,15 +34,19 @@ const Homepage = () => {
       <div className="headerh">
         <header className="navh">
           <div className="logo">
-            <span className="logo-icon">🟩</span>
+            <span className="logo-icon">🪐</span>
             <span className="logo-text">Layers</span>
           </div>
 
           <nav className="nav-links">
             <a href="#home">Home</a>
-           <Link to="/chat" >Chat</Link>
+            {localuser && <Link to="/chat">Chat</Link>}
+
             <a href="#integrations">Integrations</a>
-            <a href="#faqs">FAQs</a>
+            <Link to="/" onClick={logout}>
+              {localuser && <>Log-out</>}
+              {!localuser && <>FAQ's</>}
+            </Link>
           </nav>
 
           <div className="auth-buttons">
@@ -56,12 +60,11 @@ const Homepage = () => {
                 </Link>
               </>
             )}
-             {localuser && (
+            {localuser && (
               <>
-                <h1 className="name"> Welcome &nbsp;&nbsp;{name}</h1>
-              </> 
+                <span>👨‍🚀</span><span class="comet-username"> AKSHAY YADAV</span>
+              </>
             )}
-
           </div>
         </header>
       </div>
