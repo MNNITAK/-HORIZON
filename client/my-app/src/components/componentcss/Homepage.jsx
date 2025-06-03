@@ -21,7 +21,7 @@ const generateStars = (count = 100) => {
 
 const Homepage = () => {
 
-  const { localuser } = useAuth();
+  const { localuser,logout } = useAuth();
   const { getUserChats} = ownChats(); // Get potential chats from context
   const name = localuser ? localuser.name.toUpperCase() : "GUEST"; // Get the user's name or set to "GUEST" in uppercase
   
