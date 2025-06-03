@@ -1,4 +1,3 @@
-
 const express = require('express');
 const http = require('http'); 
 const cors = require('cors');
@@ -10,27 +9,33 @@ const Messageroute = require('./routes/Messageroute.js');
 const Getuser = require('./routes/Getuserroute.js');
 const dotenv = require('dotenv');
 
-
 // Configure dotenv to load environment variables
 dotenv.config();
 const app = express();
-app.use(cors()); // Enable CORS
+
+// Prepare allowed origins from environment variables
+const allowedOrigins = [
+  process.env.FRONTEND_URL,
+  process.env.BACKEND_URL,
+  'http://localhost:5173',
+  'http://localhost:5000'
+].filter(Boolean);
+
 const corsOptions = {
-  origin: ['http://localhost:5173','http://localhost:5000'], // Allowed 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allowed HTTP methods
-  credentials: true, // Allow cookies and credentials
+  origin: allowedOrigins,
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  credentials: true,
 };
+
 app.use(cors(corsOptions)); 
 // Middleware
 app.use(express.json()); // Parse JSON bodies
 app.use(express.urlencoded({ extended: true })); // Parse URL-encoded bodies
 
-
-
 const server = http.createServer(app);
-const io = new Server(server, { // <-- ATTACH SOCKET.IO
+const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:5173','http://localhost:5000'],
+    origin: allowedOrigins,
     methods: ['GET', 'POST']
   }
 });
@@ -64,16 +69,8 @@ io.on('connection', (socket) => {
   });
 });
 
-
-
-
-
-
-
-
-
 // Connect to MongoDB
-const uri = process.env.ATLAS_URI; // Ensure the environment variable is named correctly
+const uri = process.env.ATLAS_URI;
 if (!uri) {
   console.error("Error: ATLAS_URI is not defined in the .env file.");
   process.exit(1);
@@ -85,27 +82,20 @@ try {
 } catch (error) {
   console.error("Database connection failed");
   console.error(error);
-  process.exit(1); // Exit the process if the database connection fails
+  process.exit(1);
 }
 
 // Routes
-
-app.use('/api/user', userRoutes); // Middleware to load user routes
-app.use('/api/getuser',Getuser);
-app.use('/api/chat', Chatroute); // Middleware to load auth routes
-app.use('/api/message',Messageroute)
+app.use('/api/user', userRoutes);
+app.use('/api/getuser', Getuser);
+app.use('/api/chat', Chatroute);
+app.use('/api/message', Messageroute);
 app.get('/', (req, res) => {
   res.send("Welcome to the server");
 });
 
-
-
-
-
-
-
 // Start the server
-const PORT = process.env.PORT || 5000; // Use PORT from .env or default to 5000
+const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
