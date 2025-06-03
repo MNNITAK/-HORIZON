@@ -1,0 +1,158 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.mainh {
+  position: relative;
+  overflow: hidden;
+  min-height: 100vh;
+  background-color: #000; /* or your preferred dark color */
+  color: white;
+}
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: blink 2s infinite ease-in-out;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 1; }
+}
+
+/* Ensure your main content is above stars */
+.headerh, .contenth {
+  position: relative;
+  z-index: 1;
+}
+.headerh{
+height: 40%;
+display: flex;
+width: 100%;
+align-items: center;
+justify-content: center;
+  
+ 
+}
+
+
+.navh {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  width: 60%;
+ background: none;
+  padding: 1rem 2rem;
+
+  
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-icon {
+  font-size: 1.5rem;
+  margin-right: 0.4rem;
+}
+
+.logo-text {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: white;
+}
+
+.nav-links a {
+  color: white;
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: limegreen;
+}
+.name{
+ background: linear-gradient(90deg, #3b87d5 0%, #91cfff 50%, #711b59 100%);
+  color: transparent;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+/* text-fill-color: transparent; */
+  margin: 0 1rem;
+  text-decoration: none;
+  font-size: 20px;
+  transition: color 0.3s;
+  font-family:"Playfair Display", serif;
+  
+
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.login-btn {
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  
+}
+
+.signup-btn {
+  background-color: limegreen;
+  color: black;
+  border: none;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.contenth{
+
+display: flex;
+justify-content: center;
+align-items: center;
+
+
+
+}
+.Horizon{
+font-family:"Playfair Display", serif;
+position: relative;
+top: 200px;
+ font-weight: 400;
+  font-style: normal;
+font-size: 100px;
+background: linear-gradient(90deg, #82f369 0%, #91cfff 40%, #ffaacc 100%);
+color: transparent;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+/* text-fill-color: transparent; */
+}

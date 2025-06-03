@@ -1,0 +1,158 @@
+/* Container for the signup form */
+.signupContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Segoe UI", sans-serif;
+   
+     background: linear-gradient(135deg, #000000, #1a1a40);
+;
+  }
+  /* Signup box styling */
+  .signupBox {
+    position:relative;
+    bottom:10vh;
+    height:50vh;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    padding: 50px;
+    /* text-align: center; */
+  }
+  
+  /* Title styling */
+  .signupTitle {
+background: linear-gradient(90deg, #575dd7 0%, #91cfff 40%, #ffaacc 100%);
+color: transparent;
+-webkit-background-clip: text;
+background-clip: text;
+-webkit-text-fill-color: transparent;
+text-fill-color: transparent;
+
+    position: relative;
+    right: 1vw;
+    width: 30vw;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 60px;
+    
+  }
+  
+  /* Form styling */
+  .signupForm {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  /* Input group styling */
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+  }
+  
+  .inputGroup label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 0px;
+    color: #555555;
+  }
+  
+  .inputField {
+    position: relative;
+    color:white;
+    background-color: #1a1a1a;
+;
+    width: 18vw;
+    padding:10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    margin: 0px;
+  }
+  
+  .inputs{
+    position: relative;
+    top:0vh;
+     gap:20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .inputField:focus {
+    border-color: #7c3aed;
+    box-shadow: 0 0 4px rgba(124, 58, 237, 0.5);
+  }
+  
+  /* Submit button styling */
+  .submitButton {
+    position: relative;
+    top:20vh;
+    width:10vw;
+    padding: 12px;
+    background-color: #32CD32;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .submitButton:hover {
+    background-color: #6d28d9;
+  }
+  
+  .submitButton:active {
+    transform: scale(0.98);
+  }
+  
+  /* Alert styling */
+  .alert {
+    position: relative;
+    top: 30vh;
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #ffcccc;
+    color: #cc0000;
+    border-radius: 6px;
+    font-size: 14px;
+  }
+
+  .extras{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    top:32vh;
+    align-items: center;
+    justify-content: center;
+
+  }
+  .link{
+    text-decoration: none;
+    color: #6d28d9;
+
+  }
+  /* Responsive design */
+  @media (max-width: 480px) {
+    .signupBox {
+      padding: 30px 20px;
+    }
+  
+    .signupTitle {
+      font-size: 20px;
+    }
+  
+    .submitButton {
+      font-size: 14px;
+    }
+}
+  

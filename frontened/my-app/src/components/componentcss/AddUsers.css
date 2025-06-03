@@ -1,0 +1,109 @@
+/* Background Stars */
+.adduser-stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.adduser-star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: adduser-twinkle infinite alternate;
+}
+
+@keyframes adduser-twinkle {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+/* Main Container */
+.adduser-container {
+  position: relative;
+  height: 100vh;
+  background: linear-gradient(to bottom, #04071D, #0a122a);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Orbitron', Arial, sans-serif;
+  z-index: 1;
+  overflow: hidden;
+}
+
+/* Panel */
+.adduser-panel {
+  background-color: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(8px);
+  border-radius: 16px;
+  padding: 2rem;
+  max-height: 90vh;
+  width: 600px;
+  overflow-y: auto;
+  z-index: 2;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.08);
+}
+
+.adduser-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.adduser-title {
+  font-size: 2rem;
+  color: #f1f5f9;
+  font-weight: bold;
+}
+
+/* User Row */
+.adduser-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.adduser-item {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.adduser-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.adduser-button {
+  background-color: #3b82f6;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  font-family: inherit;
+}
+
+.adduser-button:hover {
+  background-color: #2563eb;
+}
+
+.adduser-empty {
+  text-align: center;
+  color: #94a3b8;
+  font-size: 1.1rem;
+  margin-top: 2rem;
+}
