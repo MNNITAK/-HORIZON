@@ -1,5 +1,5 @@
 import { createContext, useCallback, useContext, useState } from "react";
-import { baseUrl } from "../utils/services"; // Import baseUrl
+import { baseUrl } from "../utils/services.js"; // Import baseUrl
 // import PostRequest from "../utils/services"; // Import PostRequest
 import { useNavigate } from 'react-router-dom';
 import UserModel from "../models/FUser.model.js";

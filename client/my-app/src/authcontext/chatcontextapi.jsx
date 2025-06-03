@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from "react";
-import { baseUrl, getRequest, PostRequest } from "../utils/services"; // <-- updated getRequest import
-import { useAuth } from "./contextapi";
+import { baseUrl, getRequest, PostRequest } from "../utils/services.js"; // <-- updated getRequest import
+import { useAuth } from "./contextapi.jsx";
 import Chatmodel from "../models/FChat.model.js";
 import { Form } from "react-router-dom";
 import { useCallback } from "react";
