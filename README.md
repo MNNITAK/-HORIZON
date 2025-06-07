@@ -12,7 +12,7 @@ Users can register, log in, start private conversations, send messages, view pro
 
 ## 🌐 Live Demo
 
-[Coming Soon or add your link here]
+[https://horizon-8xtw.vercel.app/]
 
 ---
 
