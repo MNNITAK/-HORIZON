@@ -4,6 +4,8 @@ import { baseUrl } from "../utils/services.js"; // Import baseUrl
 import { useNavigate } from 'react-router-dom';
 import UserModel from "../models/FUser.model.js";
 import { useRef } from "react";
+
+
 const AuthContext = createContext();
 
 
@@ -163,6 +165,9 @@ export const AuthProvider = ({ children }) => {
     localStorage.removeItem("login");
   }, []);
 
+
+
+
   return (
     <AuthContext.Provider
       value={{
@@ -185,6 +190,8 @@ export const AuthProvider = ({ children }) => {
     </AuthContext.Provider>
   );
 };
+
+
 
 export const useAuth = () => {
   return useContext(AuthContext);

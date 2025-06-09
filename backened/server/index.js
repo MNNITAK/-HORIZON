@@ -94,8 +94,13 @@ app.get('/', (req, res) => {
   res.send("Welcome to the server");
 });
 
+
+
+
 // Start the server
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
+
+
