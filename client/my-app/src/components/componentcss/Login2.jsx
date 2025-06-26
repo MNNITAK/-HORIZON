@@ -82,7 +82,7 @@ const Login2 = () => {
             </span>
 
             {loginerror?.error && (
-              <div className="alert">
+              <div className="alert-login">
                 <p>{loginerror?.message}</p>
               </div>
             )}

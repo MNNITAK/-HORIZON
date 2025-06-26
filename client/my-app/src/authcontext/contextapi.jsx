@@ -52,6 +52,7 @@ export const AuthProvider = ({ children }) => {
 
   const [registerloading, setregisterloading] = useState(false);
   const [registererror, setregistererror] = useState(null);
+  console.log("registererror",registererror);
   const [loginloading, setloginloading] = useState(false);
   const[userlogin, setuserlogin] = useState(null);
   const [loginerror, setloginerror] = useState(null);
@@ -100,16 +101,21 @@ export const AuthProvider = ({ children }) => {
     try {
       // Call the backend API
       const response = await PostRequest(`${baseUrl}/user/register`, registerinfo);
-      console.log("register", response);
+      // console.log("register", response);
+      
       if (response.error) {
         setregisterloading(false);
-        return setregistererror(response);
+        return setregistererror(response?.message);
         console.log(registererror);
       }
 
       localStorage.setItem("User", JSON.stringify(response));  //saved as user the current user
       //       setUser(response);
       setregisterloading(false);
+
+//navigate to passkey generator page
+
+
       navigate('/login');
     } catch (error) {
       setregisterloading(false);

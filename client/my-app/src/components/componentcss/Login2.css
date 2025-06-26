@@ -115,9 +115,9 @@ text-fill-color: transparent;
   }
   
   /* Alert styling */
-  .alert {
+  .alert-login {
     position: relative;
-    top: 30vh;
+    top: 20vh;
     margin-top: 10px;
     padding: 10px;
     background-color: #ffcccc;

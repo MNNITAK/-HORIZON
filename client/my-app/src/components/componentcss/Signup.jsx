@@ -106,7 +106,7 @@ const SignupForm = () => {
           </span>
 
           {registererror?.error && (
-            <div className="alert">
+            <div className="alerts">
               <p>{registererror?.message}</p>
             </div>
           )}

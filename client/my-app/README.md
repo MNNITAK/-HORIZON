@@ -13,8 +13,6 @@ If you are developing a production application, we recommend using TypeScript an
 
 
 
-
-
 cd c:\Users\ay912\Desktop\realtimechat\frontened\my-app
 
 

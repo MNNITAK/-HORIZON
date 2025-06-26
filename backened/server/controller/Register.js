@@ -59,6 +59,9 @@ const Register = async (req, res) => {
     // Generate a token
     const token = generateToken(user1._id);
 
+
+
+
     // Send the response
     res.status(200).json({
       message: "User registered successfully",
