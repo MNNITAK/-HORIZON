@@ -26,6 +26,11 @@ const Passkey = async (req, res) => {
         attestationType: 'none',
         userName: userName,
         timeout: 30_000,
+        authenticatorSelection: {
+        authenticatorAttachment: 'platform',
+        userVerification: 'preferred',
+        residentKey: 'preferred',
+  },
     })
 
     // Store challenge for future verification
