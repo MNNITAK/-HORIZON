@@ -3,7 +3,10 @@ const Register = require('../controller/Register.js');
 const Login = require('../controller/Login.js');
 const Findone = require('../controller/Search.js');
 const Getuser = require('../controller/Getuser.js');
+const Passkey = require('../controller/Passkey.js');
 const router = express.Router();
+
+router.post('/setpasskey', Passkey);
 router.post('/register', Register);
 router.post('/login', Login);
 router.get('/findone/:userId', Findone);

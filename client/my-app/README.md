@@ -1,5 +1,15 @@
 # React + Vite
 
+
+cd C:\Users\ay912\Desktop\horizon\client\my-app\src
+npm run dev
+
+cd C:\Users\ay912\Desktop\horizon\backened\server  
+npm run start
+
+
+
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
@@ -23,7 +33,3 @@ cd c:\frontened\my-app
 
 
 
-cd C:\Users\ay912\Desktop\realtimechat\frontened\my-app\src  
-npm run dev
-cd C:\Users\ay912\Desktop\realtimechat\backened\server    
-npm run start

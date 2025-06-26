@@ -4,6 +4,8 @@ import { baseUrl } from "../utils/services.js"; // Import baseUrl
 import { useNavigate } from 'react-router-dom';
 import UserModel from "../models/FUser.model.js";
 import { useRef } from "react";
+import { startRegistration } from '@simplewebauthn/browser';
+
 
 
 const AuthContext = createContext();
@@ -48,8 +50,6 @@ const PostRequest = async (url, body) => {
 
 export const AuthProvider = ({ children }) => {
    const navigate = useNavigate();
-  
-
   const [registerloading, setregisterloading] = useState(false);
   const [registererror, setregistererror] = useState(null);
   console.log("registererror",registererror);
@@ -73,13 +73,6 @@ export const AuthProvider = ({ children }) => {
     email: "",
     password: "",
   });
-
-
-
-
-
-
-
 
 
   // Function to update login info
@@ -111,17 +104,52 @@ export const AuthProvider = ({ children }) => {
 
       localStorage.setItem("User", JSON.stringify(response));  //saved as user the current user
       //       setUser(response);
+      console.log("response2", response);
+      setLocalUser(response); // Set the local user to the user property of the response
       setregisterloading(false);
 
 //navigate to passkey generator page
 
-
-      navigate('/login');
+     navigate('/passkey');
+      // navigate('/login');
     } catch (error) {
       setregisterloading(false);
       setregistererror({ error: true, message: error.message });
     }
   }, [registerinfo]);
+
+
+
+
+  const setPasskey = useCallback(async () => {
+    try {
+      // Call the backend API to set the passkey
+      console.log("localuser/passkey", localuser._id);
+      console.log("data to be sent to passkey",{userId: localuser._id, username: localuser.name});
+      const response = await PostRequest(`${baseUrl}/user/setpasskey`, { 
+        userId: localuser._id, 
+        userName: localuser.name 
+      }); // Pass userId and username directly
+      console.log("passkey response got", response);
+
+      const ChallengeResult= await response;
+
+      console.log("challenge got from backend");
+      const{options}= ChallengeResult;
+      const authenticationResult = await startRegistration({...options});
+      console.log("authenticationResult", authenticationResult);
+
+
+      // console.log("Passkey set successfully:", response);
+      // Handle success, e.g., navigate to another page or show a success message
+    } catch (error) {
+      console.error("Error setting passkey:", error);
+      // Handle error, e.g., show an error message
+    }
+
+
+  })
+
 
   // Function to log in a user
   const loginuser = useCallback(async (e,email,password) => {
@@ -177,6 +205,7 @@ export const AuthProvider = ({ children }) => {
   return (
     <AuthContext.Provider
       value={{
+        setPasskey,
         localuser,
         loginuser,
         registerUser,

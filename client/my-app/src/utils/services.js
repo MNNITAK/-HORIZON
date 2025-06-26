@@ -1,4 +1,5 @@
-export const baseUrl = "https://horizon-kxu9.onrender.com/api";
+// export const baseUrl = "https://horizon-kxu9.onrender.com/api";
+export const baseUrl = "http://localhost:5000/api";
 
 
 //this is backened url
