@@ -20,7 +20,8 @@ const Passkey = async (req, res) => {
     const userIDBuffer = Buffer.from(userId, 'utf8');
 
     const challengePayload = await generateRegistrationOptions({
-        rpID: 'localhost',
+        // rpID: 'localhost',
+        rpID: 'horizon-8xtw.vercel.app',
         rpName: 'Horizon',
         attestationType: 'none',
         userName: userName,
